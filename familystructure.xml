@@ -1,0 +1,377 @@
+<xml>
+   <households>
+     <household name="With Children">
+      <average>19.2</average>
+      <couple>12.4</couple>
+      <female>35.3</female>
+      <male>21.7</male>
+     </household>
+   
+     <household name="Without Children">
+      <average>11.7</average>
+      <couple>9.7</couple>
+      <female>15.3</female>
+      <male>14</male>
+     </household>
+   </households>
+<states>
+<state>
+  <statename>AK</statename>
+  <twothousand>11.8</twothousand>
+  <twothousandseven>12.9</twothousandseven>
+  <twothousandten>12.1</twothousandten>
+  <twothousandtwelve>12.0</twothousandtwelve>
+</state>
+<state>
+  <statename>AL</statename>
+  <twothousand>12.5</twothousand>
+  <twothousandseven>15</twothousandseven>
+  <twothousandten>17.9</twothousandten>
+  <twothousandtwelve>16.8</twothousandtwelve>
+</state>
+<state>
+  <statename>AR</statename>
+  <twothousand>14.6</twothousand>
+  <twothousandseven>17.7</twothousandseven>
+  <twothousandten>19.7</twothousandten>
+  <twothousandtwelve>19.9</twothousandtwelve>
+</state>
+<state>
+  <statename>AZ</statename>
+  <twothousand>12.5</twothousand>
+  <twothousandseven>14.5</twothousandseven>
+  <twothousandten>14.9</twothousandten>
+  <twothousandtwelve>15.4</twothousandtwelve>
+</state>
+<state>
+  <statename>CA</statename>
+  <twothousand>11.7</twothousand>
+  <twothousandseven>14.1</twothousandseven>
+  <twothousandten>15.6</twothousandten>
+  <twothousandtwelve>13.5</twothousandtwelve>
+</state>
+<state>
+  <statename>CO</statename>
+  <twothousand>9.2</twothousand>
+  <twothousandseven>12.2</twothousandseven>
+  <twothousandten>14.1</twothousandten>
+  <twothousandtwelve>13.6</twothousandtwelve>
+</state>
+<state>
+  <statename>CT</statename>
+  <twothousand>7.6</twothousand>
+  <twothousandseven>11.4</twothousandseven>
+  <twothousandten>13.4</twothousandten>
+  <twothousandtwelve>13.9</twothousandtwelve>
+</state>
+<state>
+  <statename>DC</statename>
+  <twothousand>9.3</twothousand>
+  <twothousandseven>12.9</twothousandseven>
+  <twothousandten>12</twothousandten>
+  <twothousandtwelve>13.2</twothousandtwelve>
+</state>
+<state>
+  <statename>DE</statename>
+  <twothousand>6.8</twothousand>
+  <twothousandseven>9.5</twothousandseven>
+  <twothousandten>11.6</twothousandten>
+  <twothousandtwelve>12.1</twothousandtwelve>
+</state>
+<state>
+  <statename>FL</statename>
+  <twothousand>11.8</twothousand>
+  <twothousandseven>14.2</twothousandseven>
+  <twothousandten>14.8</twothousandten>
+  <twothousandtwelve>13.8</twothousandtwelve>
+</state>
+<state>
+  <statename>GA</statename>
+  <twothousand>12.9</twothousand>
+  <twothousandseven>15.6</twothousandseven>
+  <twothousandten>16.9</twothousandten>
+  <twothousandtwelve>15.7</twothousandtwelve>
+</state>
+<state>
+  <statename>HI</statename>
+  <twothousand>11.9</twothousand>
+  <twothousandseven>11.4</twothousandseven>
+  <twothousandten>14</twothousandten>
+  <twothousandtwelve>12.3</twothousandtwelve>
+</state>
+<state>
+  <statename>IA</statename>
+  <twothousand>9.1</twothousand>
+  <twothousandseven>11.5</twothousandseven>
+  <twothousandten>12.6</twothousandten>
+  <twothousandtwelve>11.4</twothousandtwelve>
+</state>
+<state>
+  <statename>ID</statename>
+  <twothousand>13.7</twothousand>
+  <twothousandseven>11.6</twothousandseven>
+  <twothousandten>14.3</twothousandten>
+  <twothousandtwelve>14.1</twothousandtwelve>
+</state>
+<state>
+  <statename>IL</statename>
+  <twothousand>8.6</twothousand>
+  <twothousandseven>12.2</twothousandseven>
+  <twothousandten>13</twothousandten>
+  <twothousandtwelve>11.7</twothousandtwelve>
+</state>
+<state>
+  <statename>IN</statename>
+  <twothousand>8.9</twothousand>
+  <twothousandseven>12.3</twothousandseven>
+  <twothousandten>13.5</twothousandten>
+  <twothousandtwelve>14.6</twothousandtwelve>
+</state>
+<state>
+  <statename>Ks</statename>
+  <twothousand>11.7</twothousand>
+  <twothousandseven>14.2</twothousandseven>
+  <twothousandten>14.4</twothousandten>
+  <twothousandtwelve>15.9</twothousandtwelve>
+</state>
+<state>
+  <statename>KY</statename>
+  <twothousand>10.8</twothousand>
+  <twothousandseven>13.4</twothousandseven>
+  <twothousandten>15.6</twothousandten>
+  <twothousandtwelve>17.5</twothousandtwelve>
+</state>
+<state>
+  <statename>LA</statename>
+  <twothousand>13.1</twothousand>
+  <twothousandseven>10</twothousandseven>
+  <twothousandten>15.7</twothousandten>
+  <twothousandtwelve>17.6</twothousandtwelve>
+</state>
+<state>
+  <statename>MA</statename>
+  <twothousand>6.4</twothousand>
+  <twothousandseven>10</twothousandseven>
+  <twothousandten>11.4</twothousandten>
+  <twothousandtwelve>9.6</twothousandtwelve>
+</state>
+<state>
+  <statename>MD</statename>
+  <twothousand>8.2</twothousand>
+  <twothousandseven>11.1</twothousandseven>
+  <twothousandten>13</twothousandten>
+  <twothousandtwelve>12.5</twothousandtwelve>
+</state>
+<state>
+  <statename>ME</statename>
+  <twothousand>9</twothousand>
+  <twothousandseven>14.8</twothousandseven>
+  <twothousandten>14.9</twothousandten>
+  <twothousandtwelve>16.2</twothousandtwelve>
+</state>
+<state>
+  <statename>MI</statename>
+  <twothousand>9.2</twothousand>
+  <twothousandseven>13.4</twothousandseven>
+  <twothousandten>13.4</twothousandten>
+  <twothousandtwelve>14.7</twothousandtwelve>
+</state>
+<state>
+  <statename>MN</statename>
+  <twothousand>7.1</twothousand>
+  <twothousandseven>10.5</twothousandseven>
+  <twothousandten>10.6</twothousandten>
+  <twothousandtwelve>10.4</twothousandtwelve>
+</state>
+<state>
+  <statename>MO</statename>
+  <twothousand>9.9</twothousand>
+  <twothousandseven>15</twothousandseven>
+  <twothousandten>16.7</twothousandten>
+  <twothousandtwelve>16.8</twothousandtwelve>
+</state>
+<state>
+  <statename>Ms</statename>
+  <twothousand>14.8</twothousand>
+  <twothousandseven>17.1</twothousandseven>
+  <twothousandten>20.9</twothousandten>
+  <twothousandtwelve>22.0</twothousandtwelve>
+</state>
+<state>
+  <statename>MT</statename>
+  <twothousand>12.8</twothousand>
+  <twothousandseven>12.4</twothousandseven>
+  <twothousandten>14.1</twothousandten>
+  <twothousandtwelve>11.5</twothousandtwelve>
+</state>
+<state>
+  <statename>NC</statename>
+  <twothousand>12.3</twothousand>
+  <twothousandseven>14.8</twothousandseven>
+  <twothousandten>17</twothousandten>
+  <twothousandtwelve>16.7</twothousandtwelve>
+</state>
+<state>
+  <statename>ND</statename>
+  <twothousand>8.1</twothousand>
+  <twothousandseven>6.7</twothousandseven>
+  <twothousandten>8.7</twothousandten>
+  <twothousandtwelve>8.4</twothousandtwelve>
+</state>
+<state>
+  <statename>NE</statename>
+  <twothousand>10.7</twothousand>
+  <twothousandseven>12.2</twothousandseven>
+  <twothousandten>13.4</twothousandten>
+  <twothousandtwelve>13.9</twothousandtwelve>
+</state>
+<state>
+  <statename>NH</statename>
+  <twothousand>6.7</twothousand>
+  <twothousandseven>8.9</twothousandseven>
+  <twothousandten>9.9</twothousandten>
+  <twothousandtwelve>10.0</twothousandtwelve>
+</state>
+<state>
+  <statename>NJ</statename>
+  <twothousand>8.5</twothousand>
+  <twothousandseven>11.5</twothousandseven>
+  <twothousandten>12.1</twothousandten>
+  <twothousandtwelve>11.7</twothousandtwelve>
+</state>
+<state>
+  <statename>NM</statename>
+  <twothousand>14.3</twothousand>
+  <twothousandseven>14.7</twothousandseven>
+  <twothousandten>15.2</twothousandten>
+  <twothousandtwelve>12.3</twothousandtwelve>
+</state>
+<state>
+  <statename>NV</statename>
+  <twothousand>9.3</twothousand>
+  <twothousandseven>12.8</twothousandseven>
+  <twothousandten>16.6</twothousandten>
+  <twothousandtwelve>15.2</twothousandtwelve>
+</state>
+<state>
+  <statename>NY</statename>
+  <twothousand>9.4</twothousand>
+  <twothousandseven>12.4</twothousandseven>
+  <twothousandten>13.2</twothousandten>
+  <twothousandtwelve>14.4</twothousandtwelve>
+</state>
+<state>
+  <statename>OH</statename>
+  <twothousand>9.8</twothousand>
+  <twothousandseven>14.8</twothousandseven>
+  <twothousandten>16.1</twothousandten>
+  <twothousandtwelve>16.9</twothousandtwelve>
+</state>
+<state>
+  <statename>OK</statename>
+  <twothousand>14.3</twothousand>
+  <twothousandseven>15.2</twothousandseven>
+  <twothousandten>15.3</twothousandten>
+  <twothousandtwelve>16.5</twothousandtwelve>
+</state>
+<state>
+  <statename>OR</statename>
+  <twothousand>13.7</twothousand>
+  <twothousandseven>13.9</twothousandseven>
+  <twothousandten>13.6</twothousandten>
+  <twothousandtwelve>16.1</twothousandtwelve>
+</state>
+<state>
+  <statename>PA</statename>
+  <twothousand>9.4</twothousand>
+  <twothousandseven>11.8</twothousandseven>
+  <twothousandten>12.3</twothousandten>
+  <twothousandtwelve>11.3</twothousandtwelve>
+</state>
+<state>
+  <statename>RI</statename>
+  <twothousand>10.1</twothousand>
+  <twothousandseven>13.7</twothousandseven>
+  <twothousandten>15.4</twothousandten>
+  <twothousandtwelve>12.7</twothousandtwelve>
+</state>
+<state>
+  <statename>sC</statename>
+  <twothousand>12.3</twothousand>
+  <twothousandseven>13.5</twothousandseven>
+  <twothousandten>15.4</twothousandten>
+  <twothousandtwelve>13.9</twothousandtwelve>
+</state>
+<state>
+  <statename>sD</statename>
+  <twothousand>8</twothousand>
+  <twothousandseven>11.2</twothousandseven>
+  <twothousandten>12.9</twothousandten>
+  <twothousandtwelve>11.9</twothousandtwelve>
+</state>
+<state>
+  <statename>TN</statename>
+  <twothousand>11.3</twothousand>
+  <twothousandseven>15.1</twothousandseven>
+  <twothousandten>16.2</twothousandten>
+  <twothousandtwelve>16.3</twothousandtwelve>
+</state>
+<state>
+  <statename>TX</statename>
+  <twothousand>14.8</twothousand>
+  <twothousandseven>17.4</twothousandseven>
+  <twothousandten>18.4</twothousandten>
+  <twothousandtwelve>17.2</twothousandtwelve>
+</state>
+<state>
+  <statename>UT</statename>
+  <twothousand>15.2</twothousand>
+  <twothousandseven>11.8</twothousandseven>
+  <twothousandten>14.8</twothousandten>
+  <twothousandtwelve>13.3</twothousandtwelve>
+</state>
+<state>
+  <statename>VA</statename>
+  <twothousand>7.3</twothousand>
+  <twothousandseven>9.2</twothousandseven>
+  <twothousandten>9.2</twothousandten>
+  <twothousandtwelve>10.1</twothousandtwelve>
+</state>
+<state>
+  <statename>VT</statename>
+  <twothousand>9</twothousand>
+  <twothousandseven>13.6</twothousandseven>
+  <twothousandten>12.7</twothousandten>
+  <twothousandtwelve>12.6</twothousandtwelve>
+</state>
+<state>
+  <statename>WA</statename>
+  <twothousand>12.3</twothousand>
+  <twothousandseven>14</twothousandseven>
+  <twothousandten>14.6</twothousandten>
+  <twothousandtwelve>13.7</twothousandtwelve>
+</state>
+<state>
+  <statename>WI</statename>
+  <twothousand>8.1</twothousand>
+  <twothousandseven>11.4</twothousandseven>
+  <twothousandten>11.2</twothousandten>
+  <twothousandtwelve>11.4</twothousandtwelve>
+</state>
+<state>
+  <statename>WV</statename>
+  <twothousand>9.4</twothousand>
+  <twothousandseven>13.4</twothousandseven>
+  <twothousandten>14.2</twothousandten>
+  <twothousandtwelve>15.3</twothousandtwelve>
+</state>
+<state>
+  <statename>WY</statename>
+  <twothousand>10.7</twothousand>
+  <twothousandseven>9.8</twothousandseven>
+  <twothousandten>13.8</twothousandten>
+  <twothousandtwelve>14.0</twothousandtwelve>
+</state>
+
+</states>
+</xml>
