@@ -6,55 +6,62 @@
     </head>
     <body>
         <div id="map" style="width:100%; height: 600px;">
-
+            <div id="map1"></div>
             <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
+            
+
+        </div>
+        <div id="barcharts">
+        <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="#2000" aria-controls="2000" role="tab" data-toggle="tab">Home</a></li>
               <li role="presentation"><a href="#2007" aria-controls="2007" role="tab" data-toggle="tab">Profile</a></li>
               <li role="presentation"><a href="#2010" aria-controls="2010" role="tab" data-toggle="tab">Messages</a></li>
-              <li role="presentation"><a href="#2013" aria-controls="2012" role="tab" data-toggle="tab">Settings</a></li>
             </ul>
           
             <!-- Tab panes -->
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="2000">
-                  <table id="map1"></table>
+                  <div id="family" style="width:100%; height:400px;"></div>
               </div>
-              <div role="tabpanel" class="tab-pane" id="2007">...</div>
-              <div role="tabpanel" class="tab-pane" id="2010">...</div>
-              <div role="tabpanel" class="tab-pane" id="2012">...</div>
+              <div role="tabpanel" class="tab-pane" id="2007">
+                <div id="race" style="width:100%; height:400px;"></div>
+              </div>
+              
+              <div role="tabpanel" class="tab-pane" id="2010">
+                <div id="education" style="width:100%; height:400px;"></div>
+              </div>
             </div>
-
-        </div>
-        <div id="bar" style="width:100%; height:400px;"></div>
+        
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+        <script src="http://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<script src="js/modules/data.js"></script>
+        
         <script>
             
            var householdTypes = [];
            var average = [];
            var couples = [];
            var female = [];
+           var races = [];
            var male = [];
-           var state = [];
-           var stateName = [];
-           var twoThousand = [];
-           var twoThousandSeven = [];
-           var twoThousandTen = [];
-           var twoThousandTwelve = [];
-           var mapCount = 1;
-           var table00 = [];
+           var percentRace = [];
+           var levels = [];
+           var percentEducation = [];
+
             function loadData () {
                 $.ajax({
-                    url: 'familystructure.xml',
+                    url: 'barcharts.xml',
                     type: 'GET',
                     dataType: 'xml',
                     success: function(xml){
                         parseData(xml)
                     }
                 });
+                
                             
             }
            
@@ -68,27 +75,26 @@
                     male.push(parseFloat($(this).find("male").text()));
                     female.push(parseFloat($(this).find("female").text()));
                 });
-                
+                $(xml).find("race").each(function(index){
+                    races.push($(this).attr("name"));
+                    percentRace.push(parseFloat($(this).find("percent").text()));
+                });
+                $(xml).find("level").each(function(index){
+                    levels.push($(this).attr("name"));
+                    percentEducation.push(parseFloat($(this).find("percent").text()));
+                });
+                console.log(races);
                 buildChart();
-                buildMap(xml);
                 
            }
-            
-            function buildMap(xml) {
-                $(xml).find("state").each(function(index){
-                    table00 += "<tr><td>" + mapCount + "</td>";
-                    mapCount ++;
-                    table00 += "<td>" + ($(this).find("statename").text()) + "</td>";
-                    table00 += "<td>" + parseFloat($(this).find("twothousand").text()) + "</td></tr>";
-                    $('map1').append(table00);
+                
+
     
-                }
-            )}
             
         
             
             function buildChart() { 
-                $('#bar').highcharts({
+                $('#family').highcharts({
                     chart: {
                         type: 'bar'
                     },
@@ -120,12 +126,127 @@
                         data: male
                     }]
                 });
+                $('#race').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: 'Percent of People who are Food Insecure'
+                    },
+                    subtitle: {
+                        text: 'Organized by Race'
+                    },
+                    xAxis: {
+                        categories: races
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Percent'
+                        }
+                    },
+                    series: [{
+                        data: percentRace
+                    }],
+                    legend: {
+                        enabled: false
+                    }
+                });
+                $('#education').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: 'Percent of People who are Food Insecure'
+                    },
+                    subtitle: {
+                        text: 'Organized by Highest Level of Education Completed'
+                    },
+                    xAxis: {
+                        categories: levels
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Percent'
+                        }
+                    },
+                    series: [{
+                        data: percentEducation
+                    }],
+                    legend: {
+                        enabled: false
+                    }
+                });
             };
+            
+    function buildMap() {
+
+    $.getJSON('map.json', function (data) {
+
+        // Make codes uppercase to match the map data
+        $.each(data, function () {
+            this.code = this.code.toUpperCase();
+        });
+
+        // Instanciate the map
+        $('#map1').highcharts('Map', {
+
+            chart : {
+                borderWidth : 1
+            },
+
+            title : {
+                text : 'Food Insecurity in the United States'
+            },
+
+            legend: {
+                layout: 'horizontal',
+                borderWidth: 0,
+                backgroundColor: 'rgba(255,255,255,0.85)',
+                floating: true,
+                verticalAlign: 'top',
+                y: 25
+            },
+
+            mapNavigation: {
+                enabled: true
+            },
+
+            colorAxis: {
+                min: 1,
+                max: 25,
+              minColor: '#efecf3',
+                maxColor: '#990041'
+                
+            },
+
+            series : [{
+                animation: {
+                    duration: 1000
+                },
+                data : data,
+                mapData: Highcharts.maps['countries/us/us-all'],
+                joinBy: ['postal-code', 'code'],
+                dataLabels: {
+                    enabled: true,
+                    color: 'white',
+                    format: '{point.code}'
+                },
+                name: 'Percent of Households',
+                tooltip: {
+                    pointFormat: '{point.code}: {point.value}'
+                }
+            }]
+        });
+    });
+           }
+
             
             $(document).ready(function(){
                 console.log("doc ready!")
                 loadData();
+                buildMap();
             })
+            
         </script>
     </body>
 </html>

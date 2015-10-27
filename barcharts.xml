@@ -28,4 +28,18 @@
          <percent>13.4</percent>
       </race>
    </races>
+   <educationlevels>
+      <level name="Did not graduate high school">
+         <percent>20.1</percent>
+      </level>
+      <level name="High School Graduate">
+         <percent>13.8</percent>
+      </level>
+      <level name="Some College">
+         <percent>12.9</percent>
+      </level>
+      <level name="Bachelors or Higher">
+         <percent>5</percent>
+      </level>
+   </educationlevels>
 </xml>
