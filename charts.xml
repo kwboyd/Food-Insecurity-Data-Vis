@@ -1,0 +1,127 @@
+<xml>
+   <households>
+     <household name="With Children">
+         <average>19.2</average>
+         <couple>12.4</couple>
+         <female>35.3</female>
+         <male>21.7</male>
+     </household>
+   
+     <household name="Without Children">
+         <average>11.7</average>
+         <couple>9.7</couple>
+         <female>15.3</female>
+         <male>14</male>
+     </household>
+   </households>
+   <races>
+      <race name="White">
+         <percent>9.9</percent>
+      </race>
+      <race name="Black">
+         <percent>20</percent>
+      </race>
+      <race name="Hispanic (of any race)">
+         <percent>18.9</percent>
+      </race>
+      <race name="Other">
+         <percent>13.4</percent>
+      </race>
+   </races>
+   <educationlevels>
+      <level name="Did not graduate high school">
+         <percent>20.1</percent>
+      </level>
+      <level name="High School Graduate">
+         <percent>13.8</percent>
+      </level>
+      <level name="Some College">
+         <percent>12.9</percent>
+      </level>
+      <level name="Bachelors or Higher">
+         <percent>5</percent>
+      </level>
+   </educationlevels>
+   <years>
+      <year>
+         <yearnumber>1995</yearnumber>
+         <percent>11.94</percent>
+      </year>
+      <year>
+         <yearnumber>1996</yearnumber>
+         <percent>12.02</percent>
+      </year>
+      <year>
+         <yearnumber>1997</yearnumber>
+         <percent>10.11</percent>
+      </year>
+      <year>
+         <yearnumber>1998</yearnumber>
+         <percent>11.79</percent>
+      </year>
+      <year>
+         <yearnumber>1999</yearnumber>
+         <percent>10.06</percent>
+      </year>
+      <year>
+         <yearnumber>2000</yearnumber>
+         <percent>10.47</percent>
+      </year>
+      <year>
+         <yearnumber>2001</yearnumber>
+         <percent>10.69</percent>
+      </year>
+      <year>
+         <yearnumber>2002</yearnumber>
+         <percent>11.10</percent>
+      </year>
+      <year>
+         <yearnumber>2003</yearnumber>
+         <percent>11.21</percent>
+      </year>
+      <year>
+         <yearnumber>2004</yearnumber>
+         <percent>11.95</percent>
+      </year>
+      <year>
+         <yearnumber>2005</yearnumber>
+         <percent>11.00</percent>
+      </year>
+      <year>
+         <yearnumber>2006</yearnumber>
+         <percent>10.94</percent>
+      </year>
+      <year>
+         <yearnumber>2007</yearnumber>
+         <percent>11.11</percent>
+      </year>
+      <year>
+         <yearnumber>2008</yearnumber>
+         <percent>14.59</percent>
+      </year>
+      <year>
+         <yearnumber>2009</yearnumber>
+         <percent>14.69</percent>
+      </year>
+      <year>
+         <yearnumber>2010</yearnumber>
+         <percent>14.51</percent>
+      </year>
+      <year>
+         <yearnumber>2011</yearnumber>
+         <percent>14.94</percent>
+      </year>
+      <year>
+         <yearnumber>2012</yearnumber>
+         <percent>14.51</percent>
+      </year>
+      <year>
+         <yearnumber>2013</yearnumber>
+         <percent>14.28</percent>
+      </year>
+      <year>
+         <yearnumber>2014</yearnumber>
+         <percent>14.05</percent>
+      </year>
+   </years>
+</xml>

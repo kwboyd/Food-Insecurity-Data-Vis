@@ -2,43 +2,65 @@
     <head>
         <title>High Charts Hello World!</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+            <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
 
     </head>
     <body>
         <div id="map" style="width:100%; height: 600px;">
             <div id="map1"></div>
-            <!-- Nav tabs -->
             
 
         </div>
         <div id="barcharts">
         <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#2000" aria-controls="2000" role="tab" data-toggle="tab">Home</a></li>
-              <li role="presentation"><a href="#2007" aria-controls="2007" role="tab" data-toggle="tab">Profile</a></li>
-              <li role="presentation"><a href="#2010" aria-controls="2010" role="tab" data-toggle="tab">Messages</a></li>
+              <li role="presentation" class="active"><a href="#family" aria-controls="Family Structure" role="tab" data-toggle="tab">Family Structure</a></li>
+              <li role="presentation"><a href="#race" aria-controls="Race" role="tab" data-toggle="tab">Race</a></li>
+              <li role="presentation"><a href="#education" aria-controls="Education" role="tab" data-toggle="tab">Education</a></li>
             </ul>
           
             <!-- Tab panes -->
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="2000">
+              <div role="tabpanel" class="tab-pane active" id="family">
                   <div id="family" style="width:100%; height:400px;"></div>
               </div>
-              <div role="tabpanel" class="tab-pane" id="2007">
+              <div role="tabpanel" class="tab-pane" id="race">
                 <div id="race" style="width:100%; height:400px;"></div>
               </div>
               
-              <div role="tabpanel" class="tab-pane" id="2010">
+              <div role="tabpanel" class="tab-pane" id="education">
                 <div id="education" style="width:100%; height:400px;"></div>
               </div>
             </div>
-        
-
+        </div> <!-- closes bar charts -->
+        <div id="line-graph" style="width:100%; height:400px";>
+            
+        </div>
+        <div>
+            <table id="data-table" class="display" cellspacing="0" width="100%">
+                <thead>
+            <tr>
+                <th>State</th>
+                <th>State Population</th>
+                <th>Percent Food Insecure</th>
+                <th>Food Insecure Population</th>
+                <th>Percent Very Insecure</th>
+                <th>Very Insecure Population</th>
+            </tr>
+        </thead>
+ 
+        <tbody id="data-table-body">
+            
+        </tbody>
+    </table>
+        </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="http://code.highcharts.com/maps/modules/map.js"></script>
         <script src="http://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
-<script src="js/modules/data.js"></script>
+        <script src="js/modules/data.js"></script>
+        <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
         
         <script>
             
@@ -51,23 +73,28 @@
            var percentRace = [];
            var levels = [];
            var percentEducation = [];
+           var years = [];
+           var percentYear = [];
+           var htmlTable = [];
+           var state = [];
+           var statePop = [];
+           var insecurePercent = [];
+           var insecurePop = [];
+           var vinsecurePercent = [];
+           var vinsecurePop = [];
 
             function loadData () {
                 $.ajax({
-                    url: 'barcharts.xml',
+                    url: 'charts.xml',
                     type: 'GET',
                     dataType: 'xml',
                     success: function(xml){
                         parseData(xml)
                     }
-                });
-                
-                            
-            }
+                });             
+            };
            
            function parseData (xml) {
-    
-            
                 $(xml).find("household").each(function(index){
                     householdTypes.push($(this).attr("name"));
                     average.push(parseFloat($(this).find("average").text()));
@@ -83,18 +110,18 @@
                     levels.push($(this).attr("name"));
                     percentEducation.push(parseFloat($(this).find("percent").text()));
                 });
-                console.log(races);
+                $(xml).find("year").each(function(index){
+                    years.push($(this).find("yearnumber").text());
+                    percentYear.push(parseFloat($(this).find("percent").text()));
+                });
                 buildChart();
-                
-           }
-                
-
-    
+                console.log("parsed");
+           };
             
         
             
-            function buildChart() { 
-                $('#family').highcharts({
+    function buildChart() { 
+        $('#family').highcharts({
                     chart: {
                         type: 'bar'
                     },
@@ -126,7 +153,7 @@
                         data: male
                     }]
                 });
-                $('#race').highcharts({
+         $('#race').highcharts({
                     chart: {
                         type: 'bar'
                     },
@@ -151,7 +178,7 @@
                         enabled: false
                     }
                 });
-                $('#education').highcharts({
+        $('#education').highcharts({
                     chart: {
                         type: 'bar'
                     },
@@ -176,75 +203,141 @@
                         enabled: false
                     }
                 });
-            };
+        $('#line-graph').highcharts({
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Percent of US Population that are Food Insecure'
+                },
+                subtitle: {
+                    text: 'From 1995 to 2014'
+                },
+                xAxis: {
+                    categories: years
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percent'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    data: percentYear
+                }],
+                legend: {
+                         enabled: false
+                 }
+            });
+     };
+
+            
             
     function buildMap() {
 
-    $.getJSON('map.json', function (data) {
-
-        // Make codes uppercase to match the map data
-        $.each(data, function () {
-            this.code = this.code.toUpperCase();
-        });
-
-        // Instanciate the map
-        $('#map1').highcharts('Map', {
-
-            chart : {
-                borderWidth : 1
-            },
-
-            title : {
-                text : 'Food Insecurity in the United States'
-            },
-
-            legend: {
-                layout: 'horizontal',
-                borderWidth: 0,
-                backgroundColor: 'rgba(255,255,255,0.85)',
-                floating: true,
-                verticalAlign: 'top',
-                y: 25
-            },
-
-            mapNavigation: {
-                enabled: true
-            },
-
-            colorAxis: {
-                min: 1,
-                max: 25,
-              minColor: '#efecf3',
-                maxColor: '#990041'
-                
-            },
-
-            series : [{
-                animation: {
-                    duration: 1000
-                },
-                data : data,
-                mapData: Highcharts.maps['countries/us/us-all'],
-                joinBy: ['postal-code', 'code'],
-                dataLabels: {
-                    enabled: true,
-                    color: 'white',
-                    format: '{point.code}'
-                },
-                name: 'Percent of Households',
-                tooltip: {
-                    pointFormat: '{point.code}: {point.value}'
-                }
-            }]
-        });
-    });
-           }
+                $.getJSON('map.json', function (data) {
+            
+                    // Make codes uppercase to match the map data
+                    $.each(data, function () {
+                        this.code = this.code.toUpperCase();
+                    });
+            
+                    // Instanciate the map
+                    $('#map1').highcharts('Map', {
+            
+                        chart : {
+                            borderWidth : 1
+                        },
+            
+                        title : {
+                            text : 'Food Insecurity in the United States'
+                        },
+            
+                        legend: {
+                            layout: 'horizontal',
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(255,255,255,0.85)',
+                            floating: true,
+                            verticalAlign: 'top',
+                            y: 25
+                        },
+            
+                        mapNavigation: {
+                            enabled: true
+                        },
+            
+                        colorAxis: {
+                            min: 1,
+                            max: 25,
+                          minColor: '#efecf3',
+                            maxColor: '#990041'
+                            
+                        },
+            
+                        series : [{
+                            animation: {
+                                duration: 1000
+                            },
+                            data : data,
+                            mapData: Highcharts.maps['countries/us/us-all'],
+                            joinBy: ['postal-code', 'code'],
+                            dataLabels: {
+                                enabled: true,
+                                color: 'white',
+                                format: '{point.code}'
+                            },
+                            name: 'Percent of Households',
+                            tooltip: {
+                                pointFormat: '{point.code}: {point.value}'
+                            }
+                        }]
+                    });
+                });
+           };
+        
+        function loadDataTable() {
+            $.ajax({
+                    url: 'datatable.xml',
+                    type: 'GET',
+                    dataType: 'xml',
+                    success: function(xml){
+                        parseDataTable(xml)
+                    }
+                });
+            console.log("datatable loaded");
+        };
+        
+        function parseDataTable(xml) {
+            $(xml).find("tablestate").each(function(index){
+                htmlTable += "<tr><td>" + $(this).find("state").text() + "</td>"
+                htmlTable += "<td>" + $(this).find("population").text() + "</td>"
+                htmlTable += "<td>" + $(this).find("insecurepercent").text() + "</td>"
+                htmlTable += "<td>" + $(this).find("insecurepop").text() + "</td>"
+                htmlTable += "<td>" + $(this).find("vinsecurepercent").text() + "</td>"
+                htmlTable += "<td>" + $(this).find("vinpop").text() + "</td>"
+            })
+            buildDataTable();
+            console.log("datparsed")
+        };
+        
+        function buildDataTable() {
+            $("#data-table-body").html(htmlTable);
+            $('#data-table').DataTable();
+        }
 
             
             $(document).ready(function(){
                 console.log("doc ready!")
                 loadData();
                 buildMap();
+                loadDataTable();
             })
             
         </script>
