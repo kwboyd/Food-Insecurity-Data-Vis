@@ -1,0 +1,37 @@
+body {
+    line-height: 20px;
+}
+
+#title {
+    text-align: center;
+}
+
+.sharebuttons i{
+    float:none;
+    display: inline-block;
+}
+
+@media(max-width:768px) {
+    .sharebuttons i{
+         float: left;
+    }
+}
+
+.sharebuttons {
+    text-align: center;
+    margin: auto;
+}
+
+#footer-container .sub-logo {
+    margin-right: 13px;
+}
+
+#title-credits p{
+    text-align: center;
+}
+
+@media(min-width:979px){
+    #tophat ul {
+        display: block!important
+    }
+} /*redisplays navigation links if closed via hamburger menu*/
