@@ -30,6 +30,29 @@ body {
     text-align: center;
 }
 
+rect {
+    stroke-width: 0;
+}
+
+.subtext {
+    margin-top: 6px;
+    font-size: .8em;
+}
+
+.facts {
+    padding-top:20%;
+}
+
+@media (max-width: 993px) {
+    .facts {
+        padding-top: 5px;
+    }
+}
+
+#map1 {
+    margin-top: 25px;
+    padding-top: 10px;
+}
 @media(min-width:979px){
     #tophat ul {
         display: block!important

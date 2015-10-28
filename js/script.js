@@ -199,21 +199,23 @@ $(document).ready(function(){
                         },
             
                         title : {
-                            text : 'Food Insecurity in the United States'
+                            text : ''
                         },
-            
+               
                         legend: {
                             layout: 'horizontal',
                             borderWidth: 0,
-                            backgroundColor: 'rgba(255,255,255,0.85)',
                             floating: true,
                             verticalAlign: 'top',
-                            y: 25
+                            y: -13
                         },
             
                         mapNavigation: {
                             enabled: true,
-                            enableMouseWheelZoom: false
+                            enableMouseWheelZoom: false,
+                            buttonOptions: {
+                                align: 'right'
+                            }
                         },
             
                         colorAxis: {
