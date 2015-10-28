@@ -241,9 +241,8 @@ $(document).ready(function(){
                             mapData: Highcharts.maps['countries/us/us-all'],
                             joinBy: ['postal-code', 'code'],
                             dataLabels: {
-                                enabled: true,
-                                color: 'white',
-                                format: '{point.code}'
+                                enabled: false,
+
                             },
                             name: 'Percent of Households',
                             states: {
@@ -285,6 +284,20 @@ $(document).ready(function(){
         
         function buildDataTable() {
             $("#data-table-body").html(htmlTable);
-            $('#data-table').DataTable();
+            $('#data-table').DataTable({
+                responsive: {
+                details: {
+                    type: 'column',
+                
+                                }
+                },
+                columnDefs: [ {
+                className: 'control',
+                orderable: false,
+                targets:   0
+                } ],
+                order: [ 1, 'asc' ]
+            });
         }
+        
 
