@@ -47,14 +47,44 @@ rect {
     padding-top:30%;
 }
 
+#demographics {
+    padding: 5px 15px;
+}
+
+
 table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before {
     background-color: #EE9A49;
+}
+
+.nav-tabs>li.active>a{
+    background-color: #D98719!important;
+}
+
+ul.nav-tabs li a {
+    color: #D98719;
+}
+
+ul.nav-tabs li a:hover{
+    background-color: #FFC469;
+}
+
+ul.nav-tabs li.active:hover{
+    background-color:#CD8500;
+}
+
+nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color:#CD8500;
 }
 
 @media (max-width: 993px) {
     .facts {
         padding-top: 5px;
     }
+}
+
+#line-graph {
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .active {

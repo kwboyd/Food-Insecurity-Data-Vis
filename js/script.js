@@ -66,10 +66,7 @@ $(document).ready(function(){
                         type: 'bar'
                     },
                     title: {
-                        text: 'Percent of Households that are Food Insecure'
-                    },
-                    subtitle: {
-                        text: 'Organized by Family Structure'
+                        text: ' '
                     },
                     xAxis: {
                         categories: householdTypes
@@ -81,16 +78,20 @@ $(document).ready(function(){
                     },
                     series: [{
                         name: 'Average',
-                        data: average
+                        data: average,
+                        color: '#FEE5AC'
                     }, {
                         name: 'Couples',
-                        data: couples
+                        data: couples,
+                        color: '#FCDC51'
                     }, {
                         name: 'Single Females',
-                        data: female
+                        data: female,
+                        color: '#CD6600'
                     }, {
                         name: 'Single Males',
-                        data: male
+                        data: male,
+                        color: '#FFB00F'
                     }]
                 });
                 buildChart();
@@ -104,10 +105,7 @@ $(document).ready(function(){
                         type: 'bar'
                     },
                     title: {
-                        text: 'Percent of Households that are Food Insecure'
-                    },
-                    subtitle: {
-                        text: 'Organized by Family Structure'
+                        text: ' '
                     },
                     xAxis: {
                         categories: householdTypes
@@ -119,16 +117,20 @@ $(document).ready(function(){
                     },
                     series: [{
                         name: 'Average',
-                        data: average
+                        data: average,
+                        color: '#FEE5AC'
                     }, {
                         name: 'Couples',
-                        data: couples
+                        data: couples,
+                        color: '#FCDC51'
                     }, {
                         name: 'Single Females',
-                        data: female
+                        data: female,
+                        color: '#CD6600'
                     }, {
                         name: 'Single Males',
-                        data: male
+                        data: male,
+                        color: '#FFB00F'
                     }]
                 });
     });
@@ -138,11 +140,9 @@ $(document).ready(function(){
                         type: 'bar'
                     },
                     title: {
-                        text: 'Percent of People who are Food Insecure'
+                        text: ' '
                     },
-                    subtitle: {
-                        text: 'Organized by Race'
-                    },
+                    
                     xAxis: {
                         categories: races
                     },
@@ -152,10 +152,16 @@ $(document).ready(function(){
                         }
                     },
                     series: [{
+                                name: 'Percent',
                         data: percentRace
                     }],
                     legend: {
                         enabled: false
+                    },
+                    plotOptions: {
+                                bar: {
+                                                color: "#EE9A49"
+                                }
                     }
                 });
     });
@@ -165,11 +171,9 @@ $(document).ready(function(){
                         type: 'bar'
                     },
                     title: {
-                        text: 'Percent of People who are Food Insecure'
+                        text: ' '
                     },
-                    subtitle: {
-                        text: 'Organized by Highest Level of Education Completed'
-                    },
+                    
                     xAxis: {
                         categories: levels
                     },
@@ -179,10 +183,16 @@ $(document).ready(function(){
                         }
                     },
                     series: [{
+                                name: 'Percent',
                         data: percentEducation
                     }],
                     legend: {
                         enabled: false
+                    },
+                    plotOptions: {
+                                bar: {
+                                                color: "#EE9A49"
+                                }
                     }
                 });
         });
@@ -192,11 +202,9 @@ $(document).ready(function(){
                     type: 'line'
                 },
                 title: {
-                    text: 'Percent of US Population that are Food Insecure'
+                    text: ' '
                 },
-                subtitle: {
-                    text: 'From 1995 to 2014'
-                },
+                
                 xAxis: {
                     categories: years
                 },
@@ -210,7 +218,8 @@ $(document).ready(function(){
                         dataLabels: {
                             enabled: true
                         },
-                        enableMouseTracking: false
+                        enableMouseTracking: false,
+                        color: "#EE9A49"
                     }
                 },
                 series: [{
