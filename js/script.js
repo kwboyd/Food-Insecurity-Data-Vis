@@ -57,12 +57,48 @@ $(document).ready(function(){
                     years.push($(this).find("yearnumber").text());
                     percentYear.push(parseFloat($(this).find("percent").text()));
                 });
-                buildChart();
+                buildInitialChart();
            };
             
-        
+                function buildInitialChart () {
+                               $('#family').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: 'Percent of Households that are Food Insecure'
+                    },
+                    subtitle: {
+                        text: 'Organized by Family Structure'
+                    },
+                    xAxis: {
+                        categories: householdTypes
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Percent'
+                        }
+                    },
+                    series: [{
+                        name: 'Average',
+                        data: average
+                    }, {
+                        name: 'Couples',
+                        data: couples
+                    }, {
+                        name: 'Single Females',
+                        data: female
+                    }, {
+                        name: 'Single Males',
+                        data: male
+                    }]
+                });
+                buildChart();
+                } //builds family structure chart on page load
+                //this and the shown.bs.tab functions make sure that the charts load with the right sizing
             
-    function buildChart() { 
+    function buildChart() {
+ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) { //loads charts when data-tab clicked on
         $('#family').highcharts({
                     chart: {
                         type: 'bar'
@@ -95,6 +131,8 @@ $(document).ready(function(){
                         data: male
                     }]
                 });
+    });
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
          $('#race').highcharts({
                     chart: {
                         type: 'bar'
@@ -120,6 +158,8 @@ $(document).ready(function(){
                         enabled: false
                     }
                 });
+    });
+         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         $('#education').highcharts({
                     chart: {
                         type: 'bar'
@@ -145,6 +185,8 @@ $(document).ready(function(){
                         enabled: false
                     }
                 });
+        });
+         
         $('#line-graph').highcharts({
                 chart: {
                     type: 'line'
@@ -272,12 +314,13 @@ $(document).ready(function(){
         
         function parseDataTable(xml) {
             $(xml).find("tablestate").each(function(index){
-                htmlTable += "<tr><td>" + $(this).find("state").text() + "</td>"
+                htmlTable += "<tr><td></td>"
+                htmlTable += "<td>" + $(this).find("state").text() + "</td>"
                 htmlTable += "<td>" + $(this).find("population").text() + "</td>"
                 htmlTable += "<td>" + $(this).find("insecurepercent").text() + "</td>"
                 htmlTable += "<td>" + $(this).find("insecurepop").text() + "</td>"
                 htmlTable += "<td>" + $(this).find("vinsecurepercent").text() + "</td>"
-                htmlTable += "<td>" + $(this).find("vinpop").text() + "</td>"
+                htmlTable += "<td>" + $(this).find("vinpop").text() + "</td></tr>"
             })
             buildDataTable();
         };
@@ -288,6 +331,7 @@ $(document).ready(function(){
                 responsive: {
                 details: {
                     type: 'column',
+                    target: 'tr'
                 
                                 }
                 },

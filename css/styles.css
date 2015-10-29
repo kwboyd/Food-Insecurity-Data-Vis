@@ -47,12 +47,8 @@ rect {
     padding-top:30%;
 }
 
-table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before{
-    left: 10%;
-}
-
-table.dataTable tbody th, table.dataTable tbody td {
-    padding-left: 35px;
+table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before {
+    background-color: #EE9A49;
 }
 
 @media (max-width: 993px) {
@@ -61,6 +57,9 @@ table.dataTable tbody th, table.dataTable tbody td {
     }
 }
 
+.active {
+    display: block;
+}
 #map1 {
     margin-top: 25px;
     padding-top: 10px;
