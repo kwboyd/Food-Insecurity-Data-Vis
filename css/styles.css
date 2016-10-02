@@ -6,6 +6,11 @@ body {
     text-align: center;
 }
 
+#disclaimer {
+    color: #bbb;
+    font-style: italic;
+}
+
 .sharebuttons i{
     float:none;
     display: inline-block;
